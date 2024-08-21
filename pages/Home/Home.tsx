@@ -1,12 +1,12 @@
 import React from 'react'
-import Hero_default from '@/components/Hero/Hero';
+import Hero from '@/components/Hero/Hero';
 
-const Home_default = () => {
+const Home = () => {
   return (
     <>
-    <Hero_default/>
+    <Hero/>
     </>
   )
 }
 
-export default Home_default
+export default Home

@@ -69,14 +69,14 @@ const Navbar_Hero = () => {
         </div>
 
         {/* Navbar Links - Desktop */}
-        <div className={`hidden md:flex space-x-6`}>
-          {TEXTS.navLinks.map((link, index) => (
-            <Link key={index} href={`/${link.toLowerCase()}`} passHref>
+        <div className={`hidden lg:flex space-x-6`}>
+          {TEXTS.navItems.map((item, index) => (
+            <Link key={index} href={item.action} passHref>
               <span
                 className="transition duration-300 hover:text-pink-500"
                 style={{ color: COLORS.link }}
               >
-                {link}
+                {item.text}
               </span>
             </Link>
           ))}
@@ -84,29 +84,27 @@ const Navbar_Hero = () => {
 
         {/* Call to Action Buttons - Desktop */}
         <div className="hidden md:flex items-center space-x-4">
-          <button
-            className="py-2 px-6 rounded-full shadow-lg transition duration-300 font-semibold text-white"
-            style={{ backgroundColor: COLORS.secondary }}
-          >
-            {TEXTS.secondaryButtonText}
-          </button>
-          <button
-            className="py-2 px-6 rounded-full shadow-lg transition duration-300 font-semibold text-white"
-            style={{ backgroundColor: COLORS.primary }}
-          >
-            {TEXTS.primaryButtonText}
-          </button>
+          {TEXTS.buttons.map((button, index) => (
+            <button
+              key={index}
+              className="py-2 px-6 rounded-full shadow-lg transition duration-300 font-semibold text-white"
+              style={{ backgroundColor: index === 0 ? COLORS.secondary : COLORS.primary }}
+              onClick={() => window.location.href = button.action}
+            >
+              {button.text}
+            </button>
+          ))}
         </div>
       </div>
 
       {/* Mobile Menu - Drawer Style */}
       <div
-        className={`md:hidden fixed top-0 left-0 h-full w-64 shadow-lg z-40 transition-transform duration-300 ease-in-out ${
+        className={`md:flex fixed top-0 left-0 h-full w-64 shadow-lg z-40 transition-transform duration-300 ease-in-out ${
           isMenuOpen ? "transform translate-x-0" : "transform -translate-x-full"
         }`}
         style={{ backgroundColor: COLORS.bg }}
       >
-        <div className="flex flex-col justify-between h-full">
+        <div className="flex flex-col justify-start h-full">
           {/* Menu Title */}
           <div className="p-6 text-center">
             <h2
@@ -117,33 +115,31 @@ const Navbar_Hero = () => {
           </div>
 
           {/* Links */}
-          <div className="flex flex-col items-start space-y-4 p-6">
-            {TEXTS.navLinks.map((link, index) => (
-              <Link key={index} href={`/${link.toLowerCase()}`} passHref>
+          <div className="flex flex-col items-start space-y-4 p-6 justify-start">
+            {TEXTS.navItems.map((item, index) => (
+              <Link key={index} href={item.action} passHref>
                 <span
                   className="text-lg font-medium transition duration-300 hover:text-pink-500"
                   style={{ color: COLORS.link }}
                 >
-                  {link}
+                  {item.text}
                 </span>
               </Link>
             ))}
           </div>
 
           {/* Buttons at Bottom */}
-          <div className="flex flex-col space-y-4 p-6">
-            <button
-              className="py-2 px-6 rounded-full shadow-lg transition duration-300 font-semibold text-white"
-              style={{ backgroundColor: COLORS.secondary }}
-            >
-              {TEXTS.secondaryButtonText}
-            </button>
-            <button
-              className="py-2 px-6 rounded-full shadow-lg transition duration-300 font-semibold text-white"
-              style={{ backgroundColor: COLORS.primary }}
-            >
-              {TEXTS.primaryButtonText}
-            </button>
+          <div className="flex flex-col space-y-4 p-6 absolute bottom-1 w-full">
+            {TEXTS.buttons.map((button, index) => (
+              <button
+                key={index}
+                className="py-2 px-6 rounded-full shadow-lg transition duration-300 font-semibold text-white"
+                style={{ backgroundColor: index === 0 ? COLORS.primary : COLORS.secondary }}
+                onClick={() => window.location.href = button.action}
+              >
+                {button.text}
+              </button>
+            ))}
           </div>
         </div>
       </div>

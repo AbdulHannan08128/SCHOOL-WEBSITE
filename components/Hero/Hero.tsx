@@ -1,23 +1,23 @@
 import React from 'react';
 import { COLORS, TEXTS } from '@/constants'; // Ensure this path is correct
-import Navbar_Hero from '../Navbar/Navbar';
+import Navbar from '../Navbar/Navbar';
 
-const Hero_default = () => {
+const Hero = () => {
   return (
     <div className="bg-gradient-to-r from-gray-900 to-black py-4 h-screen">
       <div className="container mx-auto px-4 flex flex-col items-center text-center gap-3">
-        <Navbar_Hero />
+        <Navbar />
 
         {/* Announcement Banner */}
         <div className="mb-4 mt-6 flex items-center space-x-2">
-         
           <p className="mt-2 text-sm md:text-base text-gray-300 flex items-center justify-center">
-          <span
-            className="py-1 px-3 rounded-full text-white font-semibold uppercase text-xs flex items-center justify-center"
-            style={{ backgroundColor: COLORS.secondary }}
-          >
-            New
-          </span> <span className='ml-3'></span>{TEXTS.bannerAnnouncement}
+            <span
+              className="py-1 px-3 rounded-full text-white font-semibold uppercase text-xs flex items-center justify-center"
+              style={{ backgroundColor: COLORS.secondary }}
+            >
+              New
+            </span>
+            <span className="ml-3">{TEXTS.bannerAnnouncement}</span>
           </p>
         </div>
 
@@ -36,16 +36,24 @@ const Hero_default = () => {
           {TEXTS.subHeading}
         </p>
 
-        {/* Call to Action Button */}
-        <button
-          className="py-3 px-8 rounded-full shadow-lg font-semibold text-white"
-          style={{ backgroundColor: COLORS.primary }}
-        >
-          {TEXTS.primaryButtonText}
-        </button>
+        {/* Call to Action Buttons */}
+        <div className="mt-6 flex flex-col md:flex-row gap-4">
+          {TEXTS.buttons.map((button, index) => (
+            <a
+              key={index}
+              href={button.action}
+              className="py-3 px-8 rounded-full shadow-lg font-semibold text-white transition duration-300"
+              style={{
+                backgroundColor: button.text === 'Admission' ? COLORS.primary : COLORS.secondary
+              }}
+            >
+              {button.text}
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );
 };
 
-export default Hero_default;
+export default Hero;
