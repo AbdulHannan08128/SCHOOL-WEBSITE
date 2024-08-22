@@ -4,6 +4,7 @@ export const COLORS = {
   secondary: "#424242",
   bg: "#000000",
   link: "#FFD2D8",
+  bg1:"#FFF000"
 };
 
 // Define TEXTS and texts
@@ -28,6 +29,7 @@ export const TEXTS = {
     { text: "Sign In", action: "/auth/sign-in" },
     { text: "Admission", action: "/admission" },
   ],
+  performer_section_title:'Our Performers'
 };
 
 // Define subjects with possible colors and featured option
@@ -102,3 +104,19 @@ export const SUBJECTS = [
   },
   { id: 15, name: "Games", url: "/games", color: "#00FFFF", featured: false },
 ];
+
+
+export const PERFORMERS = [
+  { id: 1, name: 'Performer 1', exam: '10th', marks: '400', max_marks: '500', image:'/placeholders/student.jpg' },
+  { id: 2, name: 'Performer 2', exam: '10th', marks: '490', max_marks: '500', image:'/placeholders/student.jpg' },
+  { id: 3, name: 'Performer 3', exam: '10th', marks: '498', max_marks: '500', image:'/placeholders/student.jpg' },
+  { id: 4, name: 'Performer 4', exam: '10th', marks: '400', max_marks: '500', image:'/placeholders/student.jpg' },
+  { id: 5, name: 'Performer 5', exam: '10th', marks: '490', max_marks: '500', image:'/placeholders/student.jpg' },
+  { id: 6, name: 'Performer 6', exam: '10th', marks: '498', max_marks: '500', image:'/placeholders/student.jpg' },
+  { id: 7, name: 'Performer 7', exam: '10th', marks: '400', max_marks: '500', image:'/placeholders/student.jpg' },
+  { id: 8, name: 'Performer 8', exam: '10th', marks: '490', max_marks: '500', image:'/placeholders/student.jpg' },
+  { id: 9, name: 'Performer 9', exam: '10th', marks: '498', max_marks: '500', image:'/placeholders/student.jpg' },
+  { id: 10, name: 'Performer 10', exam: '10th', marks: '498', max_marks: '500', image:'/placeholders/student.jpg' },
+  { id: 11, name: 'Performer 11', exam: '10th', marks: '498', max_marks: '500', image:'/placeholders/student.jpg' },
+  { id: 12, name: 'Performer 12', exam: '10th', marks: '498', max_marks: '500', image:'/placeholders/student.jpg' },
+]

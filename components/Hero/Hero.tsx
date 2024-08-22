@@ -4,7 +4,7 @@ import Navbar from '../Navbar/Navbar';
 
 const Hero = () => {
   return (
-    <div className="bg-gradient-to-r from-gray-900 to-black py-4 h-screen">
+    <div className="bg-gradient-to-r from-gray-900 to-black py-4 min-h-screen h-auto">
       <div className="container mx-auto px-4 flex flex-col items-center text-center gap-3">
         <Navbar />
 
@@ -17,7 +17,7 @@ const Hero = () => {
             >
               New
             </span>
-            <span className="ml-3">{TEXTS.bannerAnnouncement}</span>
+            <span className="ml-3 text-left">{TEXTS.bannerAnnouncement}</span>
           </p>
         </div>
 
